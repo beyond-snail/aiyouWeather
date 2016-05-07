@@ -14,6 +14,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.aiyou.aiyouweather.R;
+import com.aiyouWeather.app.service.AutoUpdateService;
 import com.aiyouWeather.app.util.HttpCallbackListener;
 import com.aiyouWeather.app.util.HttpUtil;
 import com.aiyouWeather.app.util.Utility;
@@ -179,6 +180,9 @@ public class WeatherActivity extends Activity implements OnClickListener{
 		weatherInfoLayout.setVisibility(View.VISIBLE);
 		cityNameText.setVisibility(View.VISIBLE);
 		
+		//¼¤»î·þÎñ
+		Intent intent = new Intent(this, AutoUpdateService.class);
+		startService(intent);
 	}
 	
 	

@@ -135,7 +135,7 @@ public class AiyouWeatherDB {
 	public List<Country> loadCountries(int cityId) {
 
 		List<Country> list = new ArrayList<Country>();
-		Cursor cursor = db.query("Country", null, "city_id",
+		Cursor cursor = db.query("Country", null, "city_id = ?",
 				new String[] { String.valueOf(cityId) }, null, null, null);
 		if (cursor.moveToNext()){
 			do{
